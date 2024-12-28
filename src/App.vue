@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Count from './components/Count.vue';
-import LoveTalk from './components/LoveTalk.vue';
+import Count from '@/components/Count/index.vue'
+import LoveTalk from '@/components/LoveTalk/index.vue'
 </script>
 
 <template>
