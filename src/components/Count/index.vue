@@ -16,17 +16,24 @@ import { ref } from 'vue';
 import {useCountStore} from '@/store/count';
 
 const countStore = useCountStore()
-
-// console.log(countStore.sum)
-// console.log(countStore.$state.sum)
 let n = ref(1)
 
 function add() {
+  // 第一种修改方式：
+  // 修改多个值，TimeLine会有多次mutations
+  // 逻辑简单可以使用这种方式
+  // countStore.sum += n.value
 
+  // 第二种修改方式：批量变更,直接覆盖，多个参数都可以
+  // 修改多个值，TimeLine只有一次mutations
+  // countStore.$patch({sum:888})
+
+  // 第三种修改方式：最麻烦的一种，借助动作：actions
+  countStore.increment(n.value)
 }
 
 function minus() {
-
+  countStore.sum -= n.value
 }
 </script>
 
