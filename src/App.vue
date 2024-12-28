@@ -1,7 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Count from './components/Count.vue';
+import LoveTalk from './components/LoveTalk.vue';
+</script>
 
 <template>
-  <div>Hello Vite6 and Vue3</div>
+  <Count />
+  <br>
+  <LoveTalk />
 </template>
 
 <style scoped></style>
