@@ -1,6 +1,7 @@
 <template>
   <div class="count">
-    <h2>当前求和为：{{sum}}</h2>
+    <h2>当前求和为：{{sum}}, 放大10倍后: {{ bigSum }}</h2>
+    <h2>欢迎来到:{{school}}, 大写：{{ upperSchool }}, 小写：{{ lowerSchool }}</h2>
     <select v-model.number="n">
       <option value="1">1</option>
       <option value="2">2</option>
@@ -17,9 +18,9 @@ import {storeToRefs} from 'pinia';
 import {useCountStore} from '@/store/count';
 
 const countStore = useCountStore()
-// storeToRefs 只关注 state 数据，不会对方法进行 ref 包裹
+// storeToRefs 只关注 state 和 getters 数据，不会对方法进行 ref 包裹
 // toRefs 关注数据和方法
-const { sum } = storeToRefs(countStore)
+const { sum,school,bigSum,upperSchool,lowerSchool } = storeToRefs(countStore)
 
 let n = ref(1)
 
