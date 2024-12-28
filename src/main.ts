@@ -1,5 +1,10 @@
 import { createApp } from 'vue'
 // import './style.css'
-import App from './App.vue'
+// 引入 pinia
+import { createPinia } from 'pinia'
 
-createApp(App).mount('#app')
+import App from './App.vue'
+// 创建 pinia
+const pinia = createPinia()
+// 安装pinia
+createApp(App).use(pinia).mount('#app')
